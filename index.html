@@ -2,32 +2,292 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Fire fire diamond top-up Nepal </title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Dimond top-up </title>
+  
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>💎 Diamond Store 💎</h1>
-        <div id="diamond-container"></div>
-        <div id="membership-container"></div>
-        <button id="buy-button" style="display: none;" onclick="buyNow()">Buy Now</button>
-    </div>
-    <script src="script.js"></script>
-</body>
+<!DOCTYPE html>  
+
+<html lang="ne">  
+
+<head>  
+
+    <meta charset="UTF-8">  
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+    <title>Free Fire Diamond Store</title>  
+
+    <style>  
+
+        body {  
+
+            font-family: Arial, sans-serif;  
+
+            background-color: red;  
+
+            text-align: center;  
+
+            margin: 0;  
+
+            padding: 0;  
+
+        }  
+
+        .diamond-card, .offer-card {  
+
+            background: #ff3b3b;  
+
+            padding: 15px;  
+
+            margin: 10px auto;  
+
+            border-radius: 10px;  
+
+            color: white;  
+
+            font-size: 18px;  
+
+            cursor: pointer;  
+
+            border: 2px solid white;  
+
+            max-width: 400px;  
+
+        }  
+
+        .selected {  
+
+            background: #ffc107;  
+
+            color: black;  
+
+        }  
+
+        .order-btn {  
+
+            display: inline-block;  
+
+            background: white;  
+
+            padding: 10px;  
+
+            border-radius: 5px;  
+
+            color: red;  
+
+            font-weight: bold;  
+
+            cursor: pointer;  
+
+            margin-top: 10px;  
+
+        }  
+
+        .hidden {  
+
+            display: none;  
+
+        }  
+
+        .story-container {  
+
+            background: white;  
+
+            padding: 15px;  
+
+            margin: 20px auto;  
+
+            border-radius: 10px;  
+
+            text-align: left;  
+
+            max-width: 400px;  
+
+        }  
+
+    </style>  
+
+</head>  
+
+<body>  
+
+    <h1 style="color: white;">Free Fire Diamond Store</h1>  
+
+    <h2 style="color: yellow;">✨ Diamond Packages ✨</h2>  
+
+    <div id="diamond-list">  
+
+        <div class="diamond-card" data-name="💎 25 Diamonds ➤ Rs. 30" data-price="30" onclick="toggleSelection(this)">💎 25 Diamonds ➤ Rs. 30</div>  
+
+        <div class="diamond-card" data-name="💎 50 Diamonds ➤ Rs. 55" data-price="55" onclick="toggleSelection(this)">💎 50 Diamonds ➤ Rs. 55</div>  
+
+        <div class="diamond-card" data-name="💎 115 Diamonds ➤ Rs. 110" data-price="110" onclick="toggleSelection(this)">💎 115 Diamonds ➤ Rs. 110</div>  
+
+        <div class="diamond-card" data-name="💎 240 Diamonds ➤ Rs. 200" data-price="200" onclick="toggleSelection(this)">💎 240 Diamonds ➤ Rs. 200</div>  
+
+        <div class="diamond-card" data-name="💎 610 Diamonds ➤ Rs. 545" data-price="545" onclick="toggleSelection(this)">💎 610 Diamonds ➤ Rs. 545</div>  
+
+        <div class="diamond-card" data-name="💎 1090 Diamonds ➤ Rs. 940" data-price="940" onclick="toggleSelection(this)">💎 1090 Diamonds ➤ Rs. 940</div>  
+
+        <div class="diamond-card" data-name="💎 1240 Diamonds ➤ Rs. 1030" data-price="1030" onclick="toggleSelection(this)">💎 1240 Diamonds ➤ Rs. 1030</div>  
+
+        <div class="diamond-card" data-name="💎 1595 Diamonds ➤ Rs. 1305" data-price="1305" onclick="toggleSelection(this)">💎 1595 Diamonds ➤ Rs. 1305</div>  
+
+        <div class="diamond-card" data-name="💎 2090 Diamonds ➤ Rs. 1715" data-price="1715" onclick="toggleSelection(this)">💎 2090 Diamonds ➤ Rs. 1715</div>  
+
+        <div class="diamond-card" data-name="💎 2530 Diamonds ➤ Rs. 2070" data-price="2070" onclick="toggleSelection(this)">💎 2530 Diamonds ➤ Rs. 2070</div>  
+
+        <div class="diamond-card" data-name="💎 5060 Diamonds ➤ Rs. 4030" data-price="4030" onclick="toggleSelection(this)">💎 5060 Diamonds ➤ Rs. 4030</div>  
+
+        <div class="diamond-card" data-name="💎 10120 Diamonds ➤ Rs. 7200" data-price="7200" onclick="toggleSelection(this)">💎 10120 Diamonds ➤ Rs. 7200</div>  
+
+    </div>  
+
+    <h2 style="color: yellow;">🌟 Weekly and Monthly Offers 🌟</h2>  
+
+    <div>  
+
+        <div class="offer-card" data-name="🌟 Weekly ➤ Rs. 205" data-price="205" onclick="toggleSelection(this)">🌟 Weekly ➤ Rs. 210</div>  
+
+        <div class="offer-card" data-name="🌟 Monthly ➤ Rs. 980" data-price="980" onclick="toggleSelection(this)">🌟 Monthly ➤ Rs. 1030</div>  
+
+    </div>  
+
+    <h2 style="color: yellow;">🚀 Airdrop Deals 🚀</h2>  
+
+    <div>  
+
+        <div class="offer-card" data-name="🚀 Airdrop ($0.35-$1.12) ➤ Rs. 210" data-price="210" onclick="toggleSelection(this)">🚀 Airdrop ($0.35-$1.12) ➤ Rs. 210</div>  
+
+        <div class="offer-card" data-name="🚀 Airdrop ($1.80-$2.22) ➤ Rs. 390" data-price="390" onclick="toggleSelection(this)">🚀 Airdrop ($1.80-$2.22) ➤ Rs. 390</div>  
+
+    </div>  
+
+    <div class="story-container" id="story-box">
+
+        <h3>📖 Selected Items Story</h3>  
+
+        <p id="story-list">No items selected.</p>  
+
+    </div>  
+
+    <div class="order-btn" onclick="sendWhatsAppMessage()">✅ Place Order</div>  
+
+    <p style="color: white; font-size: 14px;">#KiranOfficial #FreeFireStore</p>  
+
+    <p style="color: white; font-size: 12px;">© Copyright Kiran Official</p>  
+
+    <script>  
+
+        let selectedItems = [];  
+
+        let selectedNames = [];  
+
+        function toggleSelection(card) {  
+
+            const price = parseInt(card.getAttribute("data-price"));  
+
+            const name = card.getAttribute("data-name");  
+
+            if (card.classList.contains("selected")) {  
+
+                card.classList.remove("selected");  
+
+                selectedItems = selectedItems.filter(item => item !== price);  
+
+                selectedNames = selectedNames.filter(item => item !== name);  
+
+            } else {  
+
+                card.classList.add("selected");  
+
+                selectedItems.push(price);  
+
+                selectedNames.push(name);  
+
+            }  
+
+            updateStory();  
+
+        }  
+
+        function updateStory() {  
+
+            const storyBox = document.getElementById("story-list");  
+
+            if (selectedNames.length === 0) {  
+
+                storyBox.innerHTML = "No items selected.";  
+
+                return;  
+
+            }  
+
+            let storyText = "";  
+
+            selectedNames.forEach((name, index) => {  
+
+                storyText += `Step ${index + 1}: ${name}<br>`;  
+
+            });  
+
+            storyBox.innerHTML = storyText;  
+
+        }  
+
+        function sendWhatsAppMessage() {  
+
+            if (selectedItems.length === 0) {  
+
+                alert("Please select at least one item!");  
+
+                return;  
+
+            }  
+
+            const totalPay = selectedItems.reduce((sum, price) => sum + price, 0);  
+
+            const storyText = selectedNames.map((name, index) => `Step ${index + 1}: ${name}`).join("%0A");  
+
+            const message = `🌟 *New Order* 🌟%0A%0A` +  
+
+                            `📖 *Selection Story*%0A${storyText}%0A%0A` +  
+
+                            `💰 *Total Pay:* Rs. ${totalPay}%0A%0A` +  
+
+                            `🔗 *Give me a payment QR code if you like this item.*%0A%0A` +  
+
+                            `© Copyright Kiran Official`;  
+
+            const whatsappUrl = `https://wa.me/+9779762596912?text=${message}`;  
+
+            window.open(whatsappUrl, "_blank");  
+
+            resetSelection();  
+
+        }  
+
+        function resetSelection() {  
+
+            document.querySelectorAll('.selected').forEach(card => card.classList.remove('selected'));  
+
+            selectedItems = [];  
+
+            selectedNames = [];  
+
+            document.getElementById("story-list").innerHTML = "No items selected.";  
+
+        }  
+
+    </script>  
+
+</body>  
+
 </html>
 <!-- partial -->
-  <script  src="./script.js"></script>
-
+  
 </body>
 </html>
