@@ -308,6 +308,202 @@
 
 </body>  
 
+</html><!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ID Buy & Sell</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f44336;
+
+            text-align: center;
+
+            padding: 20px;
+
+        }
+
+        .container {
+
+            background-color: white;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            display: inline-block;
+
+            width: 90%;
+
+            max-width: 400px;
+
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        h2 {
+
+            color: black;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+        }
+
+        .social-links {
+
+            margin-top: 15px;
+
+        }
+
+        .social-links a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 8px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            color: black;
+
+            padding: 10px;
+
+            border-radius: 5px;
+
+            background-color: #f1f1f1;
+
+        }
+
+        .social-links img {
+
+            width: 30px;
+
+            height: 30px;
+
+            margin-right: 10px;
+
+        }
+
+        select, button {
+
+            width: 90%;
+
+            padding: 10px;
+
+            margin-top: 10px;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+
+            border: 1px solid #ccc;
+
+        }
+
+        button {
+
+            background-color: green;
+
+            color: white;
+
+            cursor: pointer;
+
+            border: none;
+
+        }
+
+    </style>
+
+    <script>
+
+        function sendMessage() {
+
+            var choice = document.getElementById("idChoice").value;
+
+            var phoneNumber = "9762596912"; 
+
+            var message = "";
+
+            if (choice === "sell") {
+
+                message = "🚀 Hello Kiran Official, I want to *SELL* my ID. 🔥\n\nWhat should I do? Please provide *full details* 🙏";
+
+            } else if (choice === "buy") {
+
+                message = "🌟 Hello Kiran Official, I want to *BUY* an ID. 🛒\n\nWhat should I do? Please provide *full details* 🙌";
+
+            }
+
+            if (message) {
+
+                var confirmation = confirm("✅ Are you sure you want to send this message on WhatsApp?");
+
+                if (confirmation) {
+
+                    var whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+                    window.open(whatsappLink, "_blank");
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🔥 IF YOU WANT TO BUY OR SELL AN ID, CLICK THE LINK BELOW! 🔥</h2>
+
+    <div class="social-links">
+
+        <a href="https://www.facebook.com/profile.php?id=61559853130268" target="_blank">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo"> Facebook
+
+        </a>
+
+    </div>
+
+    <select id="idChoice">
+
+        <option value="sell">🚀 ID SELL</option>
+
+        <option value="buy">🛒 ID BUY</option>
+
+    </select>
+
+    <button onclick="sendMessage()">📩 SEND ON WHATSAPP</button>
+
+</div>
+
+</body>
+
 </html>
 <!-- partial -->
   
